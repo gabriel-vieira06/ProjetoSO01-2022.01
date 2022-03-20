@@ -22,7 +22,7 @@ public class Empacotador extends Thread {
 	} 
 	
 	public void run () { 
-		for (int i=1; i<1000; i++) { 
+		while(true) { 
 			long time = System.currentTimeMillis();
 			while(System.currentTimeMillis() - time < this.tempoDeEmpacotamento);
 			try {
@@ -33,8 +33,19 @@ public class Empacotador extends Thread {
 			}
 			DepositoCaixas.numeroDeCaixas++;
 			System.out.println ("Empacotador " + getName() + " embalou uma caixa!");
-			//Semaforos.M.release();	// Todos os empacotadores irão ser bloqueados caso não haja um release.
-			System.out.println("Caixas no depósito: " + DepositoCaixas.numeroDeCaixas);
+			if(DepositoCaixas.cargaDoVagao <= DepositoCaixas.numeroDeCaixas) {
+				try {
+					Semaforos.mutex.acquire();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				if(DepositoCaixas.cargaDoVagao <= DepositoCaixas.numeroDeCaixas) {
+					DepositoCaixas.numeroDeCaixas = DepositoCaixas.numeroDeCaixas - DepositoCaixas.cargaDoVagao;
+					Semaforos.N.release();
+				}
+				Semaforos.mutex.release();
+			}
 		}
 	}
 }
