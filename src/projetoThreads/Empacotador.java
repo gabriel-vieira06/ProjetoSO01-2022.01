@@ -41,7 +41,7 @@ public class Empacotador extends Thread {
 					e.printStackTrace();
 				}
 				if(DepositoCaixas.cargaDoVagao <= DepositoCaixas.numeroDeCaixas) {
-					DepositoCaixas.numeroDeCaixas = DepositoCaixas.numeroDeCaixas - DepositoCaixas.cargaDoVagao;
+					DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
 					Semaforos.N.release();
 				}
 				Semaforos.mutex.release();
