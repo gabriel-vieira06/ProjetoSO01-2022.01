@@ -40,4 +40,6 @@ status “empacotando”.
 ### Observação:
 A interface deve mostrar, a cada instante, a quantidade de caixas armazenadas no depósito e o
 status de cada processo empacotador (empacotando, colocando a caixa no depósito ou dormindo)
-e do processo trem (viajando de **A** para **B**, viajando de **B**, para **A** ou parado).
+e do processo trem (viajando de **A** para **B**, viajando de **B**, para **A** ou parado).  
+  
+*@By [Gabriel Vieira](https://github.com/gabriel-vieira06) | [Guilherme Araujo](https://github.com/Guibr99) | [Luiz Sena](https://github.com/Luizerz)*
