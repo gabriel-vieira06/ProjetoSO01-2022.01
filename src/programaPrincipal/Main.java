@@ -1,5 +1,6 @@
 package programaPrincipal;
 
+import interfaceGrafica.GUI;
 import projetoThreads.*;
 
 public class Main {
@@ -8,6 +9,7 @@ public class Main {
   
 		new GUI();
 		
+		/*
 		System.out.println("*** EXECUÇÃO DAS THREADS ***");
         Empacotador e1 = new Empacotador("E1", 3);
 		Empacotador e2 = new Empacotador("E2", 1);
@@ -15,5 +17,6 @@ public class Main {
 		e1.start();
 		e2.start();
 		T1.start();
+		*/
 	}
 }
