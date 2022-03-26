@@ -30,7 +30,7 @@ public class PainelTrem extends JPanel implements ActionListener {
 		tremButton.addActionListener(this);
 		tremButton.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		this.setLayout(new FlowLayout(FlowLayout.CENTER,20,5));
+		this.setLayout(new FlowLayout(FlowLayout.CENTER,22,5));
 		this.setBackground(null);
 		this.add(new JLabel(new ImageIcon("train.png")));
 		this.add(new LabelTexto("Digite o tempo de viagem:"));
@@ -41,7 +41,10 @@ public class PainelTrem extends JPanel implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==tremButton) System.out.println("Corinthiass");
+		if(e.getSource()==tremButton) {
+			System.out.println(tempoTrem.getText());
+			System.out.println(cargaTrem.getText());
+		};
 	}
 	
 }
