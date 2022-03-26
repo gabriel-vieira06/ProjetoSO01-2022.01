@@ -8,20 +8,20 @@ import javax.swing.JPanel;
 
 public class Paineis{
 
-	public static JPanel painelVermelho = new JPanel();
-	public static JPanel painelAzul = new JPanel();
+	public static JPanel painelEsquerdo = new JPanel();
+	public static JPanel painelDireito = new JPanel();
 	
 	Paineis(){
 				
-		painelVermelho.setBackground(new Color(255, 0, 0));
-		painelVermelho.setLayout(new GridLayout());
-		painelVermelho.add(new PainelEmpacotador());
-		painelVermelho.setBorder(BorderFactory.createLineBorder(Color.GREEN,3));
+		painelEsquerdo.setBackground(new Color(0x7f7d9c));
+		painelEsquerdo.setLayout(new GridLayout());
+		painelEsquerdo.add(new PainelEmpacotador());
+		painelEsquerdo.setBorder(BorderFactory.createLineBorder(Color.GREEN,3));
 		
-		painelAzul.setBackground(new Color(0,0,255));
-		painelAzul.setLayout(new GridLayout());
-		painelAzul.add(new PainelTrem());
-		painelAzul.setBorder(BorderFactory.createLineBorder(Color.YELLOW,3));
+		painelDireito.setBackground(new Color(0x7f7d9c));
+		painelDireito.setLayout(new GridLayout());
+		painelDireito.add(new PainelTrem());
+		painelDireito.setBorder(BorderFactory.createLineBorder(Color.YELLOW,3));
 		
 	}
 	

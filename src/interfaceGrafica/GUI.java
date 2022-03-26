@@ -14,10 +14,10 @@ public class GUI extends JFrame{
 		this.setTitle("Projeto SO - Problema Trem de Carga");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.getContentPane().setBackground(new Color(255,255,255));
-		this.setSize(750,700);
+		this.setSize(750,1000);
 		this.setLayout(new GridLayout());
-		this.add(Paineis.painelVermelho);
-		this.add(Paineis.painelAzul);
+		this.add(Paineis.painelEsquerdo);
+		this.add(Paineis.painelDireito);
 		this.setVisible(true);
 	}
 
