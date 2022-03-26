@@ -1,9 +1,9 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
+
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Paineis{
@@ -13,16 +13,14 @@ public class Paineis{
 	
 	Paineis(){
 				
-		painelVermelho.setBackground(new Color(0, 128, 0));
-		//painelVermelho.setBounds(0,0,400,400);
-		painelVermelho.setLayout(new BorderLayout());
-		painelVermelho.add(new LabelEmpacotador());
+		painelVermelho.setBackground(new Color(255, 0, 0));
+		painelVermelho.setLayout(new GridLayout());
+		painelVermelho.add(new PainelEmpacotador());
 		painelVermelho.setBorder(BorderFactory.createLineBorder(Color.GREEN,3));
 		
-		painelAzul.setBackground(new Color(51,51,51));
-		//painelAzul.setBounds(400,0,200,200);
-		painelAzul.setLayout(new BorderLayout());
-		painelAzul.add(new LabelTrem());
+		painelAzul.setBackground(new Color(0,0,255));
+		painelAzul.setLayout(new GridLayout());
+		painelAzul.add(new PainelTrem());
 		painelAzul.setBorder(BorderFactory.createLineBorder(Color.YELLOW,3));
 		
 	}

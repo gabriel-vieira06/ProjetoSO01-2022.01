@@ -1,6 +1,7 @@
 package interfaceGrafica;
 
-import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,37 +9,33 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class LabelTrem extends JLabel implements ActionListener {	// <---
+public class PainelTrem extends JPanel implements ActionListener {	// <---
 
 	JButton tremButton = new JButton("Concluir");
 	JTextField tempoTrem = new JTextField();
 	JTextField cargaTrem = new JTextField();
-	JLabel teste = new JLabel("testando");
 	
-	LabelTrem(){
-		
-		ImageIcon tremLabelIcon = new ImageIcon("train.png");
+	PainelTrem(){
 
-		tempoTrem.setBounds(100,300,300,30);
+		tempoTrem.setPreferredSize(new Dimension(300,30));
 		tempoTrem.setHorizontalAlignment(JTextField.CENTER);
 		
-		cargaTrem.setBounds(100,400,300,30);
+		cargaTrem.setPreferredSize(new Dimension(300,30));
 		cargaTrem.setHorizontalAlignment(JTextField.CENTER);
 
-		tremButton.setBounds(200,570,100,40);
+		tremButton.setPreferredSize(new Dimension(100,30));
 		tremButton.addActionListener(this);
 		tremButton.setFont(new Font("Arial", Font.BOLD, 16));
-		this.setText("Digite o tempo de viagem:");
-		this.setIcon(tremLabelIcon);
-		this.setHorizontalTextPosition(JLabel.CENTER);
-		this.setForeground(Color.WHITE);
-		this.setVerticalTextPosition(JLabel.BOTTOM);
-		this.setFont(new Font("Arial", Font.BOLD, 16));
-		this.setHorizontalAlignment(JLabel.CENTER);
-		this.setVerticalAlignment(JLabel.TOP);
+		
+		this.setLayout(new FlowLayout(FlowLayout.CENTER,500,10));
+		this.setBackground(null);
+		this.add(new JLabel(new ImageIcon("train.png")));
+		this.add(new LabelTexto("Digite o tempo de viagem:"));
 		this.add(tempoTrem);
+		this.add(new LabelTexto("Digite a carga do trem:"));
 		this.add(cargaTrem);
 		this.add(tremButton);
 	}
