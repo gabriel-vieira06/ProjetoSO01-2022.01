@@ -6,7 +6,7 @@ public class Trem extends Thread {
 
 	public double tempoDeViagem;
 	
-	public Trem (double tempoDeViagem) { 
+	public Trem (int tempoDeViagem) { 
 		super("Trem");
 		this.tempoDeViagem = tempoDeViagem * 1000;
 	}

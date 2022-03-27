@@ -15,9 +15,10 @@ public class GUI extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.getContentPane().setBackground(new Color(255,255,255));
 		this.setSize(750,1000);
-		this.setLayout(new GridLayout());
+		this.setLayout(null);
 		this.add(Paineis.painelEsquerdo);
-		this.add(Paineis.painelDireito);
+		this.add(Paineis.painelDireitoSuperior);
+		this.add(Paineis.painelDireitoInferior);
 		this.setVisible(true);
 	}
 

@@ -1,20 +1,29 @@
 package interfaceGrafica;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import programaPrincipal.DepositoCaixas;
 
 public class PainelEmpacotador extends JPanel implements ActionListener {
 	
 	JButton empacButton = new JButton("Concluir");
+	
+	public static String[] listaOperarios = new String[10];
+	public static int[] listaTempos = new int[10];
+	public static int numeroDeOperarios = 0;
+	
+	static boolean start = false;
 	
 	CheckEmpacotador[] En = new CheckEmpacotador[10];
 	
@@ -43,9 +52,25 @@ public class PainelEmpacotador extends JPanel implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==empacButton){
-			for(int i = 0;i < 9;i++) {
-				if(En[i].empacCheck.isSelected()) System.out.println(En[i].empacName.getText());	
+			for(int i = 0; i < 10; i++) {
+				if(En[i].empacCheck.isSelected()) {
+					if(Integer.parseInt(En[i].empacTime.getText()) == 0) {
+						PainelTrem.erro.setVisible(true);
+						numeroDeOperarios = 0;
+						empacButton.setBorder(null);
+						return;
+					}
+					numeroDeOperarios++;
+					listaOperarios[i] = En[i].empacName.getText();
+					listaTempos[i] = Integer.parseInt(En[i].empacTime.getText());
+					System.out.println(listaOperarios[i]);
+					System.out.println(listaTempos[i]);
+				}
 			}
+			start = true;
+			if(start && PainelTrem.start) Paineis.inicializa.start.setEnabled(true);
+			empacButton.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.green));
+			PainelTrem.erro.setVisible(false);
 		}
 	}
 }

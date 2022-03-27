@@ -16,7 +16,7 @@ public class Empacotador extends Thread {
 	
 	public double tempoDeEmpacotamento;
 	
-	public Empacotador (String id, double tempoDeEmpacotamento) { 
+	public Empacotador (String id, int tempoDeEmpacotamento) { 
 		super (id);
 		this.tempoDeEmpacotamento = tempoDeEmpacotamento * 1000;
 	} 
