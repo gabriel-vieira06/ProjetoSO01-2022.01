@@ -1,7 +1,5 @@
 package interfaceGrafica;
 
-import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JFrame;
 
 public class GUI extends JFrame{
@@ -13,7 +11,6 @@ public class GUI extends JFrame{
 		this.setResizable(false);
 		this.setTitle("Projeto SO - Problema Trem de Carga");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.getContentPane().setBackground(new Color(255,255,255));
 		this.setSize(750,1000);
 		this.setLayout(null);
 		this.add(Paineis.painelEsquerdo);

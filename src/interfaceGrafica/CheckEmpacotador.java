@@ -37,6 +37,7 @@ public class CheckEmpacotador extends JPanel{
 		
 		empacName.setPreferredSize(new Dimension(200,30));
 		empacName.setText(defaultText);
+		
 		empacTime.setPreferredSize(new Dimension(30,30));
 		empacTime.setHorizontalAlignment(JTextField.CENTER);
 		empacTime.setText("0");

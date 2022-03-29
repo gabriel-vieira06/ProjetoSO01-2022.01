@@ -13,8 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import programaPrincipal.DepositoCaixas;
-
 public class PainelEmpacotador extends JPanel implements ActionListener {
 	
 	JButton empacButton = new JButton("Concluir");
@@ -60,11 +58,11 @@ public class PainelEmpacotador extends JPanel implements ActionListener {
 						empacButton.setBorder(null);
 						return;
 					}
+					listaOperarios[numeroDeOperarios] = En[i].empacName.getText();
+					listaTempos[numeroDeOperarios] = Integer.parseInt(En[i].empacTime.getText());
+					System.out.println(listaOperarios[numeroDeOperarios]);
+					System.out.println(listaTempos[numeroDeOperarios]);
 					numeroDeOperarios++;
-					listaOperarios[i] = En[i].empacName.getText();
-					listaTempos[i] = Integer.parseInt(En[i].empacTime.getText());
-					System.out.println(listaOperarios[i]);
-					System.out.println(listaTempos[i]);
 				}
 			}
 			start = true;

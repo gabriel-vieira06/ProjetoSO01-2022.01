@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import programaPrincipal.InicializaGUI;
 import projetoThreads.Empacotador;
 
 public class PainelStart extends JPanel implements ActionListener{
@@ -32,5 +33,6 @@ public class PainelStart extends JPanel implements ActionListener{
 			for(int i = 0; i < PainelEmpacotador.numeroDeOperarios; i++) empac[i].start();
 			PainelTrem.T1.start();
 		}
+		InicializaGUI.form.dispose();
 	}
 }
