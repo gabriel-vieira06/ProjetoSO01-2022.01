@@ -33,6 +33,7 @@ public class PainelStart extends JPanel implements ActionListener{
 			for(int i = 0; i < PainelEmpacotador.numeroDeOperarios; i++) empac[i].start();
 			PainelTrem.T1.start();
 		}
+		new AnimaQuadro();
 		InicializaGUI.form.dispose();
 	}
 }

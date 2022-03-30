@@ -8,8 +8,7 @@ public class InicializaGUI {
 	public static GUI form;
 	
 	InicializaGUI(){
-
-		new AnimaQuadro();
+		
 		form = new GUI();
 	}
 	

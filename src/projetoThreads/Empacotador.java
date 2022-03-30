@@ -5,6 +5,7 @@ import programaPrincipal.DepositoCaixas;
 public class Empacotador extends Thread {
 	
 	public double tempoDeEmpacotamento;
+	int caixas;
 	
 	public Empacotador (String id, int tempoDeEmpacotamento) { 
 		super (id);
@@ -21,17 +22,19 @@ public class Empacotador extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			DepositoCaixas.numeroDeCaixas++;
 			System.out.println ("Empacotador " + getName() + " embalou uma caixa!");
-			if(DepositoCaixas.cargaDoVagao <= DepositoCaixas.numeroDeCaixas) {
+			DepositoCaixas.numeroDeCaixas++;
+			System.out.println(DepositoCaixas.numeroDeCaixas);
+			caixas++;
+			if(DepositoCaixas.cargaDoVagao <= caixas) {
 				try {
 					Semaforos.mutex.acquire();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				if(DepositoCaixas.cargaDoVagao <= DepositoCaixas.numeroDeCaixas) {
-					DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
+				if(DepositoCaixas.cargaDoVagao <= caixas) {
+					caixas -= DepositoCaixas.cargaDoVagao;
 					Semaforos.N.release();
 				}
 				Semaforos.mutex.release();

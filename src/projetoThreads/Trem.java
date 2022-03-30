@@ -4,16 +4,17 @@ import programaPrincipal.DepositoCaixas;
 
 public class Trem extends Thread {
 
-	public double tempoDeViagem;
+	public int tempoDeViagem;
+	public boolean partiu = false;
 	
 	public Trem (int tempoDeViagem) { 
 		super("Trem");
-		this.tempoDeViagem = tempoDeViagem * 1000;
+		this.tempoDeViagem = tempoDeViagem;
 	}
 	
 	public void run () { 
-		while(true) { 
-			long time = System.currentTimeMillis();
+		while(true) {
+			long time;
 			try {
 				Semaforos.N.acquire();
 			} catch (InterruptedException e) {
@@ -22,13 +23,17 @@ public class Trem extends Thread {
 			}
 			System.out.println(getName() + " pegou as caixas do depósito!");
 			Semaforos.M.release(DepositoCaixas.cargaDoVagao);
+			partiu = true;
+			DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
 			System.out.println(getName() + " está viajando de A para B!");
-			while(System.currentTimeMillis() - time < this.tempoDeViagem);
+			time = System.currentTimeMillis();
+			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 );
 			System.out.println(getName() + " chegou em B ");
 			time = System.currentTimeMillis();
 			System.out.println(getName() + " está viajando de B para A!");
-			while(System.currentTimeMillis() - time < this.tempoDeViagem);
+			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 );
 			System.out.println(getName() + " chegou em A ");
+			partiu = false;
 		}
 	}
 }
