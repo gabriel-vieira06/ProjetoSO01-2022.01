@@ -1,6 +1,5 @@
 package programaPrincipal;
 
-import interfaceGrafica.AnimaQuadro;
 import interfaceGrafica.GUI;
 
 public class InicializaGUI {

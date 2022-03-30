@@ -24,8 +24,6 @@ public class Empacotador extends Thread {
 			System.out.println ("Empacotador " + getName() + " embalou uma caixa!");
 			DepositoCaixas.numeroDeCaixas++;
 			DepositoCaixas.tempCaixas++;
-			System.out.println("Deposito: " + DepositoCaixas.numeroDeCaixas);
-			System.out.println("Caixas: " + DepositoCaixas.tempCaixas);
 			if(DepositoCaixas.tempCaixas >= DepositoCaixas.cargaDoVagao) {
 				try {
 					Semaforos.mutex.acquire();
@@ -36,7 +34,6 @@ public class Empacotador extends Thread {
 				if(DepositoCaixas.tempCaixas >= DepositoCaixas.cargaDoVagao) {
 					DepositoCaixas.tempCaixas -= DepositoCaixas.cargaDoVagao;
 					Semaforos.N.release();
-					System.out.println("Permits: " + Semaforos.N.availablePermits());
 				}
 				Semaforos.mutex.release();
 			}

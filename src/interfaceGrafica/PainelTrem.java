@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.text.NumberFormatter;
 
 import programaPrincipal.DepositoCaixas;
-import projetoThreads.Empacotador;
 import projetoThreads.Trem;
 
 public class PainelTrem extends JPanel implements ActionListener {	

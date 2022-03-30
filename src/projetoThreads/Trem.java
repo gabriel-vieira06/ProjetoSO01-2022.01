@@ -1,11 +1,13 @@
 package projetoThreads;
 
+import interfaceGrafica.PainelAnimaQuadro;
 import programaPrincipal.DepositoCaixas;
 
 public class Trem extends Thread {
 
 	public int tempoDeViagem;
 	public boolean partiu = false;
+	int contIteracao;
 	
 	public Trem (int tempoDeViagem) { 
 		super("Trem");
@@ -22,18 +24,35 @@ public class Trem extends Thread {
 				e.printStackTrace();
 			}
 			System.out.println(getName() + " pegou as caixas do depósito!");
-			Semaforos.M.release(DepositoCaixas.cargaDoVagao);
-			partiu = true;
-			DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
 			System.out.println(getName() + " está viajando de A para B!");
+			
+			Semaforos.M.release(DepositoCaixas.cargaDoVagao);
+			DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
+			
+			contIteracao = 1;
 			time = System.currentTimeMillis();
-			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 );
+			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 ) {
+				if(System.currentTimeMillis() - time >= contIteracao * tempoDeViagem) {
+					PainelAnimaQuadro.quadroTrem.cycle();
+					PainelAnimaQuadro.quadroTrem.repaint();
+					contIteracao++;
+				}
+			};
+			
 			System.out.println(getName() + " chegou em B ");
-			time = System.currentTimeMillis();
 			System.out.println(getName() + " está viajando de B para A!");
-			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 );
+			
+			contIteracao = 1;
+			time = System.currentTimeMillis();
+			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 ) {
+				if(System.currentTimeMillis() - time >= contIteracao * tempoDeViagem) {
+					PainelAnimaQuadro.quadroTrem.cycle();
+					PainelAnimaQuadro.quadroTrem.repaint();
+					contIteracao++;
+				}
+			};
+			
 			System.out.println(getName() + " chegou em A ");
-			partiu = false;
 		}
 	}
 }
