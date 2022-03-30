@@ -60,8 +60,6 @@ public class PainelEmpacotador extends JPanel implements ActionListener {
 					}
 					listaOperarios[numeroDeOperarios] = En[i].empacName.getText();
 					listaTempos[numeroDeOperarios] = Integer.parseInt(En[i].empacTime.getText());
-					System.out.println(listaOperarios[numeroDeOperarios]);
-					System.out.println(listaTempos[numeroDeOperarios]);
 					numeroDeOperarios++;
 				}
 			}

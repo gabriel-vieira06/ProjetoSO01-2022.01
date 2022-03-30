@@ -22,7 +22,6 @@ public class QuadroTrem extends JPanel implements ActionListener{
 		this.setBackground(Color.black);
 		this.setBounds(0,0,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
 		timer = new Timer(120,this);
-		System.out.println(xVelocidade);
 		timer.start();
 	}
 	
@@ -45,7 +44,7 @@ public class QuadroTrem extends JPanel implements ActionListener{
 				trem = new ImageIcon("train-sprite-test.png").getImage();
 				xVelocidade = xVelocidade * -1;
 			}
-			x = x + xVelocidade;
+			x += xVelocidade;
 			repaint();
 		}
 	}
