@@ -1,20 +1,34 @@
 package projetoThreads;
 
+import interfaceGrafica.MiniEmpacotador;
+import interfaceGrafica.PainelAnimaQuadro;
 import programaPrincipal.DepositoCaixas;
 
 public class Empacotador extends Thread {
 	
 	public int tempoDeEmpacotamento;
+	int numID;
+	int contIteracao;
+	public MiniEmpacotador Empac;
+	long time;
 	
-	public Empacotador (String id, int tempoDeEmpacotamento) { 
+	public Empacotador (String id, int tempoDeEmpacotamento, int num) { 
 		super (id);
 		this.tempoDeEmpacotamento = tempoDeEmpacotamento;
+		this.numID = num;
 	} 
 	
 	public void run () { 
 		while(true) { 
-			long time = System.currentTimeMillis();
-			while(System.currentTimeMillis() - time < this.tempoDeEmpacotamento * 1000);
+			contIteracao = 1;
+			time = System.currentTimeMillis();
+			while(System.currentTimeMillis() - time < tempoDeEmpacotamento * 1000) {
+				if(System.currentTimeMillis() - time >= contIteracao * tempoDeEmpacotamento * 2) {
+					PainelAnimaQuadro.quadroEmpacotador.Empac[numID].cycle();
+					PainelAnimaQuadro.quadroEmpacotador.Empac[numID].repaint();
+					contIteracao++;
+				}
+			}
 			try {
 				Semaforos.M.acquire();
 			} catch (InterruptedException e) {

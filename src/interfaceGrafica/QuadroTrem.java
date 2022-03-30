@@ -1,5 +1,6 @@
 package interfaceGrafica;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,6 +16,7 @@ public class QuadroTrem extends JPanel{
 	static int xVelocidade = 1;
 	
 	QuadroTrem(){
+		this.setLayout(new BorderLayout());
 		this.setBackground(Color.black);
 		this.setBounds(0,0,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
 	}
@@ -25,11 +27,11 @@ public class QuadroTrem extends JPanel{
 		
 		Graphics2D g2D = (Graphics2D) g;
 		
-		g2D.drawImage(trem, x, 0, null);
+		g2D.drawImage(trem, x, 10, null);
 	}
 	
 	public static void cycle() {
-		if(x>=PainelAnimaQuadro.PAINEL_LARGURA-trem.getWidth(null)) {
+		if(x>=PainelAnimaQuadro.PAINEL_LARGURA - trem.getWidth(null)) {
 			trem = new ImageIcon("train-sprite-test2.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}else if(x<0) {

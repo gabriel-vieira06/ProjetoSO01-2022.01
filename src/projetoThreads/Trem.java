@@ -8,6 +8,7 @@ public class Trem extends Thread {
 	public int tempoDeViagem;
 	public boolean partiu = false;
 	int contIteracao;
+	long time;
 	
 	public Trem (int tempoDeViagem) { 
 		super("Trem");
@@ -16,13 +17,13 @@ public class Trem extends Thread {
 	
 	public void run () { 
 		while(true) {
-			long time;
 			try {
 				Semaforos.N.acquire();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			System.out.println(getName() + " pegou as caixas do depósito!");
 			System.out.println(getName() + " está viajando de A para B!");
 			
@@ -31,7 +32,7 @@ public class Trem extends Thread {
 			
 			contIteracao = 1;
 			time = System.currentTimeMillis();
-			while(System.currentTimeMillis() - time < this.tempoDeViagem * 1000 ) {
+			while(System.currentTimeMillis() - time < tempoDeViagem * 1000 ) {
 				if(System.currentTimeMillis() - time >= contIteracao * tempoDeViagem) {
 					PainelAnimaQuadro.quadroTrem.cycle();
 					PainelAnimaQuadro.quadroTrem.repaint();

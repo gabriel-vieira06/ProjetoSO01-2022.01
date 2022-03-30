@@ -6,16 +6,16 @@ import javax.swing.JPanel;
 public class PainelAnimaQuadro extends JPanel{
 
 	final static int PAINEL_LARGURA = 1000 + QuadroTrem.trem.getWidth(null);
-	final static int PAINEL_ALTURA = 500;
+	final static int PAINEL_ALTURA = 500 + 2*MiniEmpacotador.empac.getHeight(null);
 	
-	public static QuadroTrem quadroTrem;
-	public static QuadroEmpacotador quadroEmpacotador;
+	public static QuadroTrem quadroTrem = new QuadroTrem();
+	public static QuadroEmpacotador quadroEmpacotador = new QuadroEmpacotador();
 	
 	PainelAnimaQuadro(){
 		this.setPreferredSize(new Dimension(PAINEL_LARGURA, PAINEL_ALTURA));
 		this.setLayout(null);
-		this.add(quadroTrem = new QuadroTrem());
-		this.add(quadroEmpacotador = new QuadroEmpacotador());
+		this.add(quadroTrem);
+		this.add(quadroEmpacotador);
 	}
 
 }
