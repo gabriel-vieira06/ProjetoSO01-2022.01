@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class QuadroTrem extends JPanel{
 	
-	static Image trem = new ImageIcon("train-sprite-test.png").getImage();
+	static Image trem = new ImageIcon("train-sprite.png").getImage();
 	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
@@ -34,10 +34,10 @@ public class QuadroTrem extends JPanel{
 	
 	public static void cycle() {
 		if(x>=PainelAnimaQuadro.PAINEL_LARGURA - trem.getWidth(null)) {
-			trem = new ImageIcon("train-sprite-test2.png").getImage();
+			trem = new ImageIcon("train-sprite2.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}else if(x<0) {
-			trem = new ImageIcon("train-sprite-test.png").getImage();
+			trem = new ImageIcon("train-sprite.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}
 		x += xVelocidade;
