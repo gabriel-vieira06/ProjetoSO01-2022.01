@@ -17,7 +17,7 @@ public class BackgroundEmpacotador extends JLayeredPane{
 	BackgroundEmpacotador(){
 		this.setOpaque(true);
 		this.add(quadroEmpacotador, Integer.valueOf(1));
-		this.setBackground(Color.pink);
+		this.setBackground(Color.gray);
 		this.setBounds(0,PainelAnimaQuadro.PAINEL_ALTURA/2,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
 		this.setLayout(null);
 		this.setVisible(true);

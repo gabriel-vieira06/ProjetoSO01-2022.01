@@ -6,11 +6,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class QuadroTrem extends JPanel{
+public class QuadroTrem extends JLayeredPane{
 	
 	static Image trem = new ImageIcon("train-sprite.png").getImage();
+	static Image bgTrem = new ImageIcon("city.png").getImage();
 	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
@@ -18,9 +20,8 @@ public class QuadroTrem extends JPanel{
 	
 	QuadroTrem(){
 		this.setLayout(new BorderLayout());
-		this.setBackground(Color.black);
 		this.setBounds(0,0,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
-		this.add(progressCaixas, BorderLayout.SOUTH);
+		this.add(progressCaixas, BorderLayout.SOUTH, Integer.valueOf(2));
 	}
 	
 	public void paint(Graphics g) {
@@ -29,7 +30,8 @@ public class QuadroTrem extends JPanel{
 		
 		Graphics2D g2D = (Graphics2D) g;
 		
-		g2D.drawImage(trem, x, 10, null);
+		g2D.drawImage(bgTrem, 0, -20, null);
+		g2D.drawImage(trem, x, 210, null);
 	}
 	
 	public static void cycle() {
