@@ -37,20 +37,20 @@ public class PainelEmpacotador extends JPanel implements ActionListener {
 		this.add(new LabelTexto("Nome | Tempo de Empacotamento:"));
 		this.add(En[0] = new CheckEmpacotador("empacotador_1"));
 		this.add(En[1] = new CheckEmpacotador("empacotador_2"));
-		//this.add(En[2] = new CheckEmpacotador("empacotador_3"));
-		//this.add(En[3] = new CheckEmpacotador("empacotador_4"));
-		//this.add(En[4] = new CheckEmpacotador("empacotador_5"));
-		//this.add(En[5] = new CheckEmpacotador("empacotador_6"));
-		//this.add(En[6] = new CheckEmpacotador("empacotador_7"));
-		//this.add(En[7] = new CheckEmpacotador("empacotador_8"));
-		//this.add(En[8] = new CheckEmpacotador("empacotador_9"));
-		//this.add(En[9] = new CheckEmpacotador("empacotador_10"));
+		this.add(En[2] = new CheckEmpacotador("empacotador_3"));
+		this.add(En[3] = new CheckEmpacotador("empacotador_4"));
+		this.add(En[4] = new CheckEmpacotador("empacotador_5"));
+		this.add(En[5] = new CheckEmpacotador("empacotador_6"));
+		this.add(En[6] = new CheckEmpacotador("empacotador_7"));
+		this.add(En[7] = new CheckEmpacotador("empacotador_8"));
+		this.add(En[8] = new CheckEmpacotador("empacotador_9"));
+		this.add(En[9] = new CheckEmpacotador("empacotador_10"));
 		this.add(empacButton);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==empacButton){
-			for(int i = 0; i < 2; i++) {
+			for(int i = 0; i < 10; i++) {
 				if(En[i].empacCheck.isSelected()) {
 					if(Integer.parseInt(En[i].empacTime.getText()) == 0) {
 						PainelTrem.erro.setVisible(true);

@@ -17,7 +17,7 @@ public class PainelStart extends JPanel implements ActionListener{
 	
 	PainelStart(){
 		
-		start.setBounds(0,0,300,50);
+		start.setBounds(30,180,300,50);
 		start.addActionListener(this);
 		start.setEnabled(false);
 		
