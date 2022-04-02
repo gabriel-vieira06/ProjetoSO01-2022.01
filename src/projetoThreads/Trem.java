@@ -1,6 +1,7 @@
 package projetoThreads;
 
 import interfaceGrafica.PainelAnimaQuadro;
+import interfaceGrafica.QuadroTrem;
 import programaPrincipal.DepositoCaixas;
 
 public class Trem extends Thread {
@@ -29,6 +30,7 @@ public class Trem extends Thread {
 			
 			Semaforos.M.release(DepositoCaixas.cargaDoVagao);
 			DepositoCaixas.numeroDeCaixas -= DepositoCaixas.cargaDoVagao;
+			QuadroTrem.progressCaixas.atualizaBar();
 			
 			contIteracao = 1;
 			time = System.currentTimeMillis();

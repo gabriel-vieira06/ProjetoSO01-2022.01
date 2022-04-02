@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class PainelAnimaQuadro extends JPanel{
 
 	final static int PAINEL_LARGURA = 1000 + QuadroTrem.trem.getWidth(null);
-	final static int PAINEL_ALTURA = 500 + 2*MiniEmpacotador.empac.getHeight(null);
+	final static int PAINEL_ALTURA = 700;
 	
 	public static QuadroTrem quadroTrem = new QuadroTrem();
 	public static QuadroEmpacotador quadroEmpacotador = new QuadroEmpacotador();

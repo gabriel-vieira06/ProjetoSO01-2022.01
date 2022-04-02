@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 public class QuadroTrem extends JPanel{
 	
 	static Image trem = new ImageIcon("train-sprite-test.png").getImage();
+	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
 	static int xVelocidade = 1;
@@ -19,6 +20,7 @@ public class QuadroTrem extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.black);
 		this.setBounds(0,0,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
+		this.add(progressCaixas, BorderLayout.SOUTH);
 	}
 	
 	public void paint(Graphics g) {

@@ -2,33 +2,26 @@ package projetoThreads;
 
 import interfaceGrafica.MiniEmpacotador;
 import interfaceGrafica.PainelAnimaQuadro;
+import interfaceGrafica.QuadroTrem;
 import programaPrincipal.DepositoCaixas;
 
 public class Empacotador extends Thread {
 	
 	public int tempoDeEmpacotamento;
-	int numID;
-	int contIteracao;
-	public MiniEmpacotador Empac;
+	public MiniEmpacotador empac;
 	long time;
 	
 	public Empacotador (String id, int tempoDeEmpacotamento, int num) { 
 		super (id);
 		this.tempoDeEmpacotamento = tempoDeEmpacotamento;
-		this.numID = num;
+		empac = PainelAnimaQuadro.quadroEmpacotador.Empac[num];
 	} 
 	
 	public void run () { 
 		while(true) { 
-			contIteracao = 1;
+			empac.animation();
 			time = System.currentTimeMillis();
-			while(System.currentTimeMillis() - time < tempoDeEmpacotamento * 1000) {
-				if(System.currentTimeMillis() - time >= contIteracao * tempoDeEmpacotamento * 2) {
-					PainelAnimaQuadro.quadroEmpacotador.Empac[numID].cycle();
-					PainelAnimaQuadro.quadroEmpacotador.Empac[numID].repaint();
-					contIteracao++;
-				}
-			}
+			while(System.currentTimeMillis() - time < tempoDeEmpacotamento * 1000);
 			try {
 				Semaforos.M.acquire();
 			} catch (InterruptedException e) {
@@ -37,6 +30,7 @@ public class Empacotador extends Thread {
 			}
 			System.out.println ("Empacotador " + getName() + " embalou uma caixa!");
 			DepositoCaixas.numeroDeCaixas++;
+			QuadroTrem.progressCaixas.atualizaBar();
 			DepositoCaixas.tempCaixas++;
 			if(DepositoCaixas.tempCaixas >= DepositoCaixas.cargaDoVagao) {
 				try {
