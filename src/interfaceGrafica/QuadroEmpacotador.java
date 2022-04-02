@@ -10,10 +10,11 @@ public class QuadroEmpacotador extends JPanel{
 	public MiniEmpacotador[] Empac;
 	
 	QuadroEmpacotador(){
-		this.setBackground(Color.GRAY);
-		this.setLayout(new GridLayout());
-		this.setBounds(0,PainelAnimaQuadro.PAINEL_ALTURA/2,PainelAnimaQuadro.PAINEL_LARGURA, PainelAnimaQuadro.PAINEL_ALTURA/2);
 		instanciaEmpacotadores();
+		this.setBackground(null);
+		this.setLayout(new GridLayout());
+		this.setBounds(0,25,1153, 300);
+		
 	}
 	
 	public void instanciaEmpacotadores() {

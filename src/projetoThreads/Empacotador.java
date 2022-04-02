@@ -14,7 +14,7 @@ public class Empacotador extends Thread {
 	public Empacotador (String id, int tempoDeEmpacotamento, int num) { 
 		super (id);
 		this.tempoDeEmpacotamento = tempoDeEmpacotamento;
-		empac = PainelAnimaQuadro.quadroEmpacotador.Empac[num];
+		empac = PainelAnimaQuadro.backgroundEmpac.quadroEmpacotador.Empac[num];
 	} 
 	
 	public void run () { 
