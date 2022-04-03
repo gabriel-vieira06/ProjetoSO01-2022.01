@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class QuadroTrem extends JLayeredPane{
 	
 	static Image trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
-	static Image bgTrem = new ImageIcon("city.png").getImage();
+	static Image bgTrem = new ImageIcon("city2.png").getImage();
 	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
