@@ -76,11 +76,9 @@ public class QuadroTrem extends JLayeredPane{
 	public void cycle() {
 		if(x>=PainelAnimaQuadro.PAINEL_LARGURA - trem.getWidth(null)) {
 			flag = true;
-			//trem = new ImageIcon("./sprite_train/train1_voltando.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}else if(x<0) {
 			flag = false;
-			//trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}
 		x += xVelocidade;
