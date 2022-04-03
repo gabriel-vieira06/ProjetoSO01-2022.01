@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/senal/Documents/GitHub/ProjetoSO01-2022.01/KensoftAnimation.jar"/>
+	<classpathentry kind="lib" path="KensoftAnimation.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
