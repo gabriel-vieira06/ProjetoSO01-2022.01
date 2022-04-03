@@ -11,12 +11,51 @@ import javax.swing.JPanel;
 
 public class QuadroTrem extends JLayeredPane{
 	
-	static Image trem = new ImageIcon("train-sprite.png").getImage();
+	static Image trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
 	static Image bgTrem = new ImageIcon("city.png").getImage();
 	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
 	static int xVelocidade = 1;
+	int indo = 0;
+	boolean flag = false;
+	
+	void TrainAnimationIndo(){
+		if (indo == 0) {
+			trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
+			indo++;
+		}else if (indo == 1) {
+			trem = new ImageIcon("./sprite_train/train2_indo.png").getImage();
+			indo++;
+		}else if (indo == 2) {
+			trem = new ImageIcon("./sprite_train/train3_indo.png").getImage();
+			indo++;
+		}else {
+			trem = new ImageIcon("./sprite_train/train4_indo.png").getImage();
+			indo = 0;
+		}
+	}
+	
+	void TrainAnimationVoltando(){
+		if (indo == 0) {
+			trem = new ImageIcon("./sprite_train/train1_voltando.png").getImage();
+			indo++;
+		}else if (indo == 1) {
+			trem = new ImageIcon("./sprite_train/train2_voltando.png").getImage();
+			indo++;
+		}else if (indo == 2) {
+			trem = new ImageIcon("./sprite_train/train3_voltando.png").getImage();
+			indo++;
+		}else {
+			trem = new ImageIcon("./sprite_train/train4_voltando.png").getImage();
+			indo = 0;
+		}
+	}
+	
+	void TrainAnimation(){
+		if (flag == false) TrainAnimationIndo();
+		else TrainAnimationVoltando();
+	}
 	
 	QuadroTrem(){
 		this.setLayout(new BorderLayout());
@@ -29,17 +68,19 @@ public class QuadroTrem extends JLayeredPane{
 		super.paint(g);
 		
 		Graphics2D g2D = (Graphics2D) g;
-		
+		TrainAnimation();
 		g2D.drawImage(bgTrem, 0, -20, null);
 		g2D.drawImage(trem, x, 210, null);
 	}
 	
-	public static void cycle() {
+	public void cycle() {
 		if(x>=PainelAnimaQuadro.PAINEL_LARGURA - trem.getWidth(null)) {
-			trem = new ImageIcon("train-sprite2.png").getImage();
+			flag = true;
+			//trem = new ImageIcon("./sprite_train/train1_voltando.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}else if(x<0) {
-			trem = new ImageIcon("train-sprite.png").getImage();
+			flag = false;
+			//trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
 			xVelocidade = xVelocidade * -1;
 		}
 		x += xVelocidade;
