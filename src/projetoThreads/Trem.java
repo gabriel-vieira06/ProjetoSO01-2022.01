@@ -7,7 +7,6 @@ import programaPrincipal.DepositoCaixas;
 public class Trem extends Thread {
 
 	public int tempoDeViagem;
-	public boolean partiu = false;
 	int contIteracao;
 	long time;
 	

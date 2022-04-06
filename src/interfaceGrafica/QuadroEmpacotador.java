@@ -1,13 +1,14 @@
 package interfaceGrafica;
 
-import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
 public class QuadroEmpacotador extends JPanel{
 	
-	public MiniEmpacotador[] Empac;
+	public ArrayList<MiniEmpacotador> empac;
+	public int i;
 	
 	QuadroEmpacotador(){
 		instanciaEmpacotadores();
@@ -18,10 +19,10 @@ public class QuadroEmpacotador extends JPanel{
 	}
 	
 	public void instanciaEmpacotadores() {
-		Empac = new MiniEmpacotador[PainelEmpacotador.numeroDeOperarios];
-		for(int i = 0; i < PainelEmpacotador.numeroDeOperarios; i++) {
-			Empac[i] = new MiniEmpacotador(PainelEmpacotador.listaOperarios[i], PainelEmpacotador.listaTempos[i]);
-			this.add(Empac[i]);
+		empac = new ArrayList<MiniEmpacotador>(PainelEmpacotador.numeroDeOperarios);
+		for(i = 0; i < PainelEmpacotador.numeroDeOperarios; i++) {
+			empac.add(new MiniEmpacotador(PainelEmpacotador.listaOperarios[i], PainelEmpacotador.listaTempos[i]));
+			this.add(empac.get(i));
 		}
 	}
 }

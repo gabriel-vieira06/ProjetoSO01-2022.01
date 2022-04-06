@@ -15,6 +15,7 @@ public class AnimaQuadro extends JFrame{
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setTitle("Projeto SO - Animação Trem de Carga");
+		this.setResizable(false);
 		this.setVisible(true);
 	}
 	

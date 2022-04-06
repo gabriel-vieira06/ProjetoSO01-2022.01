@@ -60,7 +60,7 @@ public class PainelTrem extends JPanel implements ActionListener {
 		tremButton.setFont(new Font("Arial", Font.BOLD, 16));
 		
 		erro.setFont(new Font("Arial", Font.BOLD,24));
-		erro.setForeground(Color.YELLOW);
+		erro.setForeground(Color.red);
 		erro.setVisible(false);
 		
 		this.setLayout(new FlowLayout(FlowLayout.CENTER,22,5));

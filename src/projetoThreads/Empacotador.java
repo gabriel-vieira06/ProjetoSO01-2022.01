@@ -1,5 +1,8 @@
 package projetoThreads;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 import interfaceGrafica.MiniEmpacotador;
 import interfaceGrafica.PainelAnimaQuadro;
 import interfaceGrafica.QuadroTrem;
@@ -14,7 +17,8 @@ public class Empacotador extends Thread {
 	public Empacotador (String id, int tempoDeEmpacotamento, int num) { 
 		super (id);
 		this.tempoDeEmpacotamento = tempoDeEmpacotamento;
-		empac = PainelAnimaQuadro.backgroundEmpac.quadroEmpacotador.Empac[num];
+		//empac = PainelAnimaQuadro.backgroundEmpac.quadroEmpacotador.Empac[num];
+		empac = PainelAnimaQuadro.backgroundEmpac.quadroEmpacotador.empac.get(num);
 	} 
 	
 	public void run () { 
@@ -23,7 +27,9 @@ public class Empacotador extends Thread {
 			time = System.currentTimeMillis();
 			while(System.currentTimeMillis() - time < tempoDeEmpacotamento * 1000);
 			try {
+				if(Semaforos.M.availablePermits() == 0) empac.desenho.setIcon(new ImageIcon("empacotador-sprite-bw.png"));
 				Semaforos.M.acquire();
+				empac.desenho.setIcon(new ImageIcon("empacotador-sprite.png"));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
