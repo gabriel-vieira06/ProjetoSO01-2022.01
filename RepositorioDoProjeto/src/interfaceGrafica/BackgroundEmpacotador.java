@@ -9,8 +9,8 @@ import javax.swing.JLayeredPane;
 
 public class BackgroundEmpacotador extends JLayeredPane{
 
-	Image bgImageInferior = new ImageIcon("esteira.png").getImage();
-	Image bgImageSuperior = new ImageIcon("esteira.png").getImage();
+	Image bgImageInferior = new ImageIcon(getClass().getResource("/assets/esteira.png")).getImage();
+	Image bgImageSuperior = new ImageIcon(getClass().getResource("/assets/esteira.png")).getImage();
 	
 	public static QuadroEmpacotador quadroEmpacotador = new QuadroEmpacotador();
 	

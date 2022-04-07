@@ -1,18 +1,16 @@
 package interfaceGrafica;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 
 public class QuadroTrem extends JLayeredPane{
 	
-	static Image trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
-	static Image bgTrem = new ImageIcon("city2.png").getImage();
+	Image trem = new ImageIcon(getClass().getResource("/assets/train1_indo.png")).getImage();
+	Image bgTrem = new ImageIcon(getClass().getResource("/assets/city2.png")).getImage();
 	public static CaixasBar progressCaixas = new CaixasBar();
 	
 	static int x = 0;
@@ -22,32 +20,32 @@ public class QuadroTrem extends JLayeredPane{
 	
 	void TrainAnimationIndo(){
 		if (indo == 0) {
-			trem = new ImageIcon("./sprite_train/train1_indo.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train1_indo.png")).getImage();
 			indo++;
 		}else if (indo == 1) {
-			trem = new ImageIcon("./sprite_train/train2_indo.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train2_indo.png")).getImage();
 			indo++;
 		}else if (indo == 2) {
-			trem = new ImageIcon("./sprite_train/train3_indo.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train3_indo.png")).getImage();
 			indo++;
 		}else {
-			trem = new ImageIcon("./sprite_train/train4_indo.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train4_indo.png")).getImage();
 			indo = 0;
 		}
 	}
 	
 	void TrainAnimationVoltando(){
 		if (indo == 0) {
-			trem = new ImageIcon("./sprite_train/train1_voltando.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train1_voltando.png")).getImage();
 			indo++;
 		}else if (indo == 1) {
-			trem = new ImageIcon("./sprite_train/train2_voltando.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train2_voltando.png")).getImage();
 			indo++;
 		}else if (indo == 2) {
-			trem = new ImageIcon("./sprite_train/train3_voltando.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train3_voltando.png")).getImage();
 			indo++;
 		}else {
-			trem = new ImageIcon("./sprite_train/train4_voltando.png").getImage();
+			trem = new ImageIcon(getClass().getResource("/assets/train4_voltando.png")).getImage();
 			indo = 0;
 		}
 	}

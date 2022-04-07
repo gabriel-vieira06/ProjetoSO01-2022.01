@@ -9,11 +9,11 @@ import javax.swing.JPanel;
 
 public class PainelAnimaQuadro extends JPanel{
 
-	final static int PAINEL_LARGURA = 1000 + QuadroTrem.trem.getWidth(null);
+	final static int PAINEL_LARGURA = 1000 + 120; // 120 = Largura do trem
 	final static int PAINEL_ALTURA = 700;
 	
-	JLabel esteiraSuperior = new JLabel(new ImageIcon("esteira.png"));
-	JLabel esteiraInferior = new JLabel(new ImageIcon("esteira.png"));
+	JLabel esteiraSuperior = new JLabel(new ImageIcon(getClass().getResource("/assets/esteira.png")));
+	JLabel esteiraInferior = new JLabel(new ImageIcon("/assets/esteira.png"));
 	
 	public static QuadroTrem quadroTrem = new QuadroTrem();
 	public static BackgroundEmpacotador backgroundEmpac = new BackgroundEmpacotador();

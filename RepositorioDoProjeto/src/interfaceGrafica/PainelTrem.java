@@ -65,7 +65,7 @@ public class PainelTrem extends JPanel implements ActionListener {
 		
 		this.setLayout(new FlowLayout(FlowLayout.CENTER,22,5));
 		this.setBackground(null);
-		this.add(new JLabel(new ImageIcon("train.png")));
+		this.add(new JLabel(new ImageIcon(getClass().getResource("/assets/train.png"))));
 		this.add(new LabelTexto("Digite o tempo de viagem:"));
 		this.add(tempoTrem);
 		this.add(new LabelTexto("Digite a carga do trem:"));

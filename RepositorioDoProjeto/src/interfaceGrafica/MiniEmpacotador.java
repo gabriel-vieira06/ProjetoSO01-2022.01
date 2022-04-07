@@ -9,7 +9,7 @@ import KentHipos.Kensoft;
 
 public class MiniEmpacotador extends JPanel{
 	
-	public JLabel desenho = new JLabel(new ImageIcon("empacotador-sprite.png"));
+	public JLabel desenho = new JLabel(new ImageIcon(getClass().getResource("/assets/empacotador-sprite.png")));
 	
 	static int y = 240;
 	static LabelTexto nome;

@@ -33,7 +33,7 @@ public class PainelEmpacotador extends JPanel implements ActionListener {
 		
 		this.setLayout(new FlowLayout(FlowLayout.CENTER,500,5));
 		this.setBackground(null);
-		this.add(new JLabel(new ImageIcon("worker.png")));
+		this.add(new JLabel(new ImageIcon(getClass().getResource("/assets/worker.png"))));
 		this.add(new LabelTexto("Nome | Tempo de Empacotamento:"));
 		this.add(En[0] = new CheckEmpacotador("empacotador_1"));
 		this.add(En[1] = new CheckEmpacotador("empacotador_2"));

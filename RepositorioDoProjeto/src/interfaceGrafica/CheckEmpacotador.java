@@ -14,8 +14,8 @@ import javax.swing.text.NumberFormatter;
 
 public class CheckEmpacotador extends JPanel{
 
-	ImageIcon unchecked = new ImageIcon("unchecked.png");
-	ImageIcon checked = new ImageIcon("checked.png");
+	ImageIcon unchecked = new ImageIcon(getClass().getResource("/assets/unchecked.png"));
+	ImageIcon checked = new ImageIcon(getClass().getResource("/assets/checked.png"));
 	
 	NumberFormatter formataNumero = new NumberFormatter(NumberFormat.getIntegerInstance());
 	
