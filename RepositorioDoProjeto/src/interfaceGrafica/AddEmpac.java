@@ -38,17 +38,17 @@ public class AddEmpac extends JFrame implements ActionListener{
 		formataNumero.setAllowsInvalid(false);
 		empacTime = new JFormattedTextField(formataNumero);
 		
-		empacName.setBounds(180,80,200,30);
+		empacName.setBounds(80,80,200,30);
 		empacName.setText("extra_" + (indiceArray + 1));
 		
-		empacTime.setBounds(140,80,30,30);
+		empacTime.setBounds(290,80,30,30);
 		empacTime.setHorizontalAlignment(JTextField.CENTER);
 		empacTime.setText("0");
 		
-		criaEmpacotador.setBounds(100,140,300,50);
+		criaEmpacotador.setBounds(50,140,300,50);
 		criaEmpacotador.addActionListener(this);
 		
-		erro.setBounds(130,190,300,60);
+		erro.setBounds(80,190,300,60);
 		erro.setFont(new Font("Arial", Font.BOLD,20));
 		erro.setForeground(Color.red);
 		erro.setVisible(false);
@@ -58,8 +58,8 @@ public class AddEmpac extends JFrame implements ActionListener{
 		this.add(empacTime);
 		this.add(criaEmpacotador);
 		this.add(erro);
-		this.setTitle("Projeto SO - Adicionar Novo Empacotador");
-		this.setSize(500,300);
+		this.setTitle("Projeto SO - Adicionar Empacotador");
+		this.setSize(400,300);
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
